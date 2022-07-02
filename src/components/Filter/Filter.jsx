@@ -1,15 +1,17 @@
-function Filter({ filter, handleChangeFilter }) {
+import PropTypes from "prop-types";
+
+function Filter({ value, onChange }) {
   return (
-    <>
-      <h2>Find contacts by name</h2>
-      <input
-        type="text"
-        name="filter"
-        value={filter}
-        onChange={handleChangeFilter}
-      />
-    </>
+    <label htmlFor="">
+      Filter contacts by name
+      <input type="text" value={value} onChange={onChange} />
+    </label>
   );
 }
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default Filter;
