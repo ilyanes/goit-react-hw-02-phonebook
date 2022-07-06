@@ -6,7 +6,7 @@ import ContactList from "./components/ContactList";
 import Filter from "./components/Filter";
 import Section from "./components/Section/Section";
 import Header from "./components/Header/Header";
-import ContactListItem from "./ContactListItem/ContactListItem";
+// import ContactListItem from "./ContactListItem/ContactListItem";
 
 class App extends Component {
   state = {
@@ -68,12 +68,10 @@ class App extends Component {
         </Header>
         <Section title={"Contacts"}>
           <ContactForm onSubmit={addContact} />
-          <ContactList>
-            <ContactListItem
-              contacts={visibleContact}
-              onDeleteContact={deleteContact}
-            />
-          </ContactList>
+          <ContactList
+            contacts={visibleContact}
+            onDeleteContact={deleteContact}
+          />
         </Section>
       </div>
     );
