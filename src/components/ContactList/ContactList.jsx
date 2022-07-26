@@ -1,16 +1,17 @@
 import PropTypes from "prop-types";
+import ContactListItem from "../../ContactListItem/ContactListItem";
 
 function ContactList({ contacts, onDeleteContact }) {
   return (
     <ul>
       {contacts.map(({ name, number, id }) => (
-        <li key={id}>
-          <p>Name: {name}</p>
-          <p>Number: {number}</p>
-          <button type="button" id={id} onClick={() => onDeleteContact(id)}>
-            Delete
-          </button>
-        </li>
+        <ContactListItem
+          key={id}
+          id={id}
+          name={name}
+          number={number}
+          onDeleteContact={onDeleteContact}
+        />
       ))}
     </ul>
   );
